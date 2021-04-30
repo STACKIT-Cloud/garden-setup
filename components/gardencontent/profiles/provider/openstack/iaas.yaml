@@ -19,6 +19,11 @@ providerConfig:
   kind: CloudProfileConfig
   keystoneURL: (( values.config.keystoneURL || values.credentials.authURL ))
   useOctavia: (( values.config.useOctavia || ~~ ))
+  useYAWOL:  (( values.config.useYAWOL || ~~ ))
+  yawolFlavorID:  (( values.config.yawolFlavorID || ~~ ))
+  yawolImageID:  (( values.config.yawolImageID || ~~ ))
+  yawolMigrateFromOctavia:  (( values.config.yawolMigrateFromOctavia || ~~ ))
+  yawolDebug:  (( values.config.yawolDebug || ~~ ))
   dnsServers: (( values.config.dnsServers || ~~ ))
   constraints:
     floatingPools: (( values.config.floatingPools ))
@@ -26,7 +31,7 @@ providerConfig:
     dhcpDomain: (( values.config.dhcpDomain || ~~ ))
   machineImages: (( values.config.machineImageDefinitions ))
   nodeVolumeAttachLimit: (( values.config.nodeVolumeAttachLimit || ~~ ))
-
+  storageClasses: (( values.config.storageClasses || ~~ ))
 machineImages: (( values.config.machineImages ))
 
 machineTypes: (( values.config.machineTypes ))
