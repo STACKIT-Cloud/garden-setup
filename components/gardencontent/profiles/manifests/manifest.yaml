@@ -24,6 +24,10 @@ spec:
 defaults:
   <<: (( &temporary ))
   custom:
+    monitoring:
+      remoteWritePassword: (( values.config.monitoring.remoteWritePassword || ~~ ))
+      remoteWriteURL: (( values.config.monitoring.remoteWriteURL || ~~ ))
+      remoteWriteUsername: (( values.config.monitoring.remoteWriteUsername || ~~ ))
     kubernetes: (( spec.kubernetes ))
     <<: (( defaults.providerspec ))
   spec:
@@ -48,6 +52,10 @@ defaults:
     regions:
       - <<: (( defaults.providerspec.regions || ~ ))
     caBundle: (( values.config.caBundle || ~~ ))
+    monitoring:
+      remoteWritePassword: (( values.config.monitoring.remoteWritePassword || ~~ ))
+      remoteWriteURL: (( values.config.monitoring.remoteWriteURL || ~~ ))
+      remoteWriteUsername: (( values.config.monitoring.remoteWriteUsername || ~~ ))
   kubernetes:
     versions:
       - classification: supported
