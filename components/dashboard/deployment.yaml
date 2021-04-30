@@ -80,6 +80,13 @@ dashboard:
         <<: (( .landscape.dashboard.frontendConfig.features || ~ ))
         terminalEnabled: (( ( .landscape.dashboard.terminals.active || false ) ))
     terminal: (( ( .landscape.dashboard.terminals.active || false ) ? *.terminal_config :~~ ))
+    resources:
+      limits:
+        cpu: 1
+        memory: 256Mi
+      requests:
+        cpu: 400m
+        memory: 128Mi
 
 terminal_config:
   <<: (( &temporary &template ))
